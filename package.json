@@ -67,10 +67,13 @@
       "repo": "kube-forwarder"
     },
     "mac": {
-      "target": [
-        "dmg",
-        "zip"
-      ]
+      "target": [{
+        "target": "dmg",
+        "arch": "arm64"
+      }, {
+        "target": "dmg",
+        "arch": "x64"
+      }]
     },
     "win": {
       "icon": "build/icons/icon.ico"
