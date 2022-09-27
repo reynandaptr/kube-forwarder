@@ -17,6 +17,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import 'assets/styles/_mixins', 'assets/styles/_variables';
 @import "assets/styles/icon";
 @import "assets/styles/table";
 @import "assets/styles/text";
