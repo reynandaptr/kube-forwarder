@@ -71,10 +71,6 @@
         {
           "target": "dmg",
           "arch": "arm64"
-        },
-        {
-          "target": "dmg",
-          "arch": "x64"
         }
       ]
     },
@@ -107,7 +103,7 @@
     "vue-router": "^3.0.6",
     "vuelidate": "^0.7.4",
     "vuex": "^3.1.1",
-    "vuex-electron": "^1.0.3",
+    "vuex-electron-store": "^1.4.26",
     "ws": "^6.1.2"
   },
   "devDependencies": {

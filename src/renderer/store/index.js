@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { createPersistedState } from 'vuex-electron'
+import PersistedState from 'vuex-electron-store'
 
 import modules from './modules'
 import migrate from './migrate'
@@ -26,7 +26,7 @@ const store = new Vuex.Store({
   },
   modules,
   plugins: [
-    !process.env.IS_WEB && createPersistedState()
+    PersistedState.create()
   ].filter(Boolean),
   strict: process.env.NODE_ENV !== 'production',
   mutations: {
