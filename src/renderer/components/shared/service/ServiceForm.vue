@@ -240,7 +240,8 @@ export default {
     handleSubmit() {
       const action = this.serviceId ? 'Services/updateService' : 'Services/createService'
 
-      this.$store.dispatch(action, { ...this.attributes }).then(result => {
+      // eslint-disable-next-line max-len
+      this.$store.dispatch(action, { ...this.attributes, localAddress: this.attributes.localAddress == null ? '' : this.attributes.localAddress == null }).then(result => {
         if (result.success) {
           this.$router.push('/')
         } else {
