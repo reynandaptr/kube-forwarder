@@ -1,4 +1,4 @@
-const { dialog, app } = require('electron').remote
+const { dialog, app } = require('@electron/remote')
 
 // @param options.details
 export async function showMessageBox(message, options = {}) {

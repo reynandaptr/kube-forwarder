@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import { remote } from 'electron'
+import { app } from '@electron/remote'
 import * as path from 'path'
 import { KubeConfig } from '@kubernetes/client-node'
 import { mapActions } from 'vuex'
@@ -75,8 +75,6 @@ import BaseCheckbox from './shared/form/BaseCheckbox'
 import { checkConnection } from '../lib/helpers/cluster'
 import { showConfirmBox, showOpenDialog } from '../lib/helpers/ui'
 import * as configStoringMethods from '../lib/constants/config-storing-methods'
-
-const { app } = remote
 
 export default {
   components: {

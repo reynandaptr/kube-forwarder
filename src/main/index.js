@@ -11,6 +11,8 @@ import os from 'os'
 import buildMenuTemplate from './menuTemplate'
 import { checkForUpdates } from './appUpdater'
 import store from './store'
+const remoteMain = require('@electron/remote/main')
+
 /* eslint-enable import/first */
 
 /**
@@ -35,10 +37,10 @@ function createWindow() {
     useContentSize: true,
     width: 800,
     titleBarStyle: 'hiddenInset',
-    resizable: process.env.NODE_ENV === 'development',
     webPreferences: {
       webSecurity: false,
-      nodeIntegration: true
+      nodeIntegration: true,
+      contextIsolation: false
     }
   })
 
@@ -47,6 +49,9 @@ function createWindow() {
   mainWindow.on('closed', () => {
     mainWindow = null
   })
+
+  remoteMain.initialize()
+  remoteMain.enable(mainWindow.webContents)
 
   const menuTemplate = buildMenuTemplate(app)
   const menu = Menu.buildFromTemplate(menuTemplate)
